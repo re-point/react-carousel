@@ -1,6 +1,6 @@
 {
-  "name": "@brainhubeu/react-carousel",
-  "version": "2.0.1",
+  "name": "@re_point/react-carousel",
+  "version": "2.0.7",
   "description": "Carousel component for React",
   "engines": {
     "npm": ">=6.14.3"
@@ -9,6 +9,7 @@
     "/lib/*"
   ],
   "main": "./lib/react-carousel.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "lint": "esw webpack.config.* src tools test --color",
     "clean-dist": "rimraf ./lib && mkdir lib",
@@ -18,7 +19,7 @@
     "test": "jest",
     "test:coverage": "yarn jest --coverage"
   },
-  "author": "Brainhub",
+  "author": "irinagizbrekht <i.gizbrekht@repoint.io>",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -83,6 +84,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/brainhubeu/react-carousel"
+    "url": "https://github.com/re-point/react-carousel"
   }
 }

@@ -68,6 +68,8 @@ const CarouselSlide = ({
         'BrainhubCarouselItem',
         {
           'BrainhubCarouselItem--active': index === currentSlideIndex,
+          'BrainhubCarouselItem--active-prev': index === currentSlideIndex - 1,
+          'BrainhubCarouselItem--active-next': index === currentSlideIndex + 1,
         },
         ...(itemClassNames || []),
       )}

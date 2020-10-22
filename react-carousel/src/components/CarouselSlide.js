@@ -70,6 +70,14 @@ const CarouselSlide = ({
           'BrainhubCarouselItem--active': index === currentSlideIndex,
           'BrainhubCarouselItem--active-prev': index === currentSlideIndex - 1,
           'BrainhubCarouselItem--active-next': index === currentSlideIndex + 1,
+          'BrainhubCarouselItem--active-prev-prev':
+            index === currentSlideIndex - 2,
+          'BrainhubCarouselItem--active-next-next':
+            index === currentSlideIndex + 2,
+          'BrainhubCarouselItem--active-prev-prev-prev':
+            index === currentSlideIndex - 3,
+          'BrainhubCarouselItem--active-next-next-next':
+            index === currentSlideIndex + 3,
         },
         ...(itemClassNames || []),
       )}

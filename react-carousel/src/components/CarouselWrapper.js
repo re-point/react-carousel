@@ -31,23 +31,20 @@ const CarouselWrapper = (props) => {
   const transformOffset = useRecoilValue(transformOffsetSelector);
   const nearestSlideIndex = useRecoilValue(nearestSlideSelector);
 
-  const carouselProps = Object.entries(rest.breakpoints || {})
-    .filter(([resolution]) => {
-      if (typeof window !== `undefined`) {
-        return window.innerWidth <= resolution;
-      }
-
-      return false;
-    })
-    .sort(([prevRes], [nextRes]) => nextRes - prevRes)
-    .reduce(
-      // eslint-disable-next-line no-unused-vars
-      (prev, [_, props]) => ({
-        ...prev,
-        ...props,
-      }),
-      _omit(rest, ['breakpoints']),
-    );
+  const carouselProps =
+    typeof window !== `undefined`
+      ? Object.entries(rest.breakpoints || {})
+          .filter(([resolution]) => window.innerWidth <= resolution)
+          .sort(([prevRes], [nextRes]) => nextRes - prevRes)
+          .reduce(
+            // eslint-disable-next-line no-unused-vars
+            (prev, [_, props]) => ({
+              ...prev,
+              ...props,
+            }),
+            _omit(rest, ['breakpoints']),
+          )
+      : null;
 
   const isControlled = !_isNil(customValue);
   return (

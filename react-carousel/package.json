@@ -1,6 +1,6 @@
 {
   "name": "@re_point/react-carousel",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "Carousel component for React",
   "engines": {
     "npm": ">=6.14.3"

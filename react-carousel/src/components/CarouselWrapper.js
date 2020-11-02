@@ -32,7 +32,11 @@ const CarouselWrapper = (props) => {
   const nearestSlideIndex = useRecoilValue(nearestSlideSelector);
 
   const carouselProps = Object.entries(rest.breakpoints || {})
-    .filter(([resolution]) => window.innerWidth <= resolution)
+    .filter(([resolution]) => {
+      if (typeof window !== `undefined`) {
+        window.innerWidth <= resolution;
+      }
+    })
     .sort(([prevRes], [nextRes]) => nextRes - prevRes)
     .reduce(
       // eslint-disable-next-line no-unused-vars

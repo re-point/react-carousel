@@ -34,8 +34,10 @@ const CarouselWrapper = (props) => {
   const carouselProps = Object.entries(rest.breakpoints || {})
     .filter(([resolution]) => {
       if (typeof window !== `undefined`) {
-        window.innerWidth <= resolution;
+        return window.innerWidth <= resolution;
       }
+
+      return false;
     })
     .sort(([prevRes], [nextRes]) => nextRes - prevRes)
     .reduce(

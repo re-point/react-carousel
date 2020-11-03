@@ -1,21 +1,21 @@
 import { atom } from 'recoil';
 
 export const activeSlideIndexState = atom({
-  key: '@brainhubeu/react-carousel/activeSlideIndexState',
+  key: '@re_point/react-carousel/activeSlideIndexState',
   default: 0,
 });
 
 export const slideWidthState = atom({
-  key: '@brainhubeu/react-carousel/itemWidthState',
+  key: '@re_point/react-carousel/itemWidthState',
   default: 0,
 });
 
 export const slideOffsetState = atom({
-  key: '@brainhubeu/react-carousel/itemOffsetState',
+  key: '@re_point/react-carousel/itemOffsetState',
   default: 0,
 });
 
 export const slidesState = atom({
-  key: '@brainhubeu/react-carousel/slidesState',
+  key: '@re_point/react-carousel/slidesState',
   default: [],
 });

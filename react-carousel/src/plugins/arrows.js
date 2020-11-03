@@ -62,7 +62,7 @@ const arrows = ({ carouselProps, options = {} }) => ({
           prevSlide,
           'arrowLeft',
           options.addArrowClickHandler,
-          '@brainhubeu/react-carousel/custom-arrow-left',
+          '@re_point/react-carousel/custom-arrow-left',
         );
       }
       const arrow = options.arrowLeftDisabled
@@ -73,13 +73,13 @@ const arrows = ({ carouselProps, options = {} }) => ({
         prevSlide,
         'arrowLeft',
         options.addArrowClickHandler,
-        '@brainhubeu/react-carousel/custom-arrow-left',
+        '@re_point/react-carousel/custom-arrow-left',
         disabled,
       );
     }
     return (
       <button
-        key={'@brainhubeu/react-carousel/arrow-left'}
+        key={'@re_point/react-carousel/arrow-left'}
         className="BrainhubCarousel__arrows BrainhubCarousel__arrowLeft"
         onClick={prevSlide}
         disabled={disabled}
@@ -108,7 +108,7 @@ const arrows = ({ carouselProps, options = {} }) => ({
           nextSlide,
           'arrowLeft',
           options.addArrowClickHandler,
-          '@brainhubeu/react-carousel/custom-arrow-right',
+          '@re_point/react-carousel/custom-arrow-right',
         );
       }
       const arrow = options.arrowRightDisabled
@@ -119,13 +119,13 @@ const arrows = ({ carouselProps, options = {} }) => ({
         nextSlide,
         'arrowLeft',
         options.addArrowClickHandler,
-        '@brainhubeu/react-carousel/custom-arrow-right',
+        '@re_point/react-carousel/custom-arrow-right',
         disabled,
       );
     }
     return (
       <button
-        key={'@brainhubeu/react-carousel/arrow-right'}
+        key={'@re_point/react-carousel/arrow-right'}
         className="BrainhubCarousel__arrows BrainhubCarousel__arrowRight"
         onClick={nextSlide}
         disabled={disabled}

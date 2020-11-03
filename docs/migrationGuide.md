@@ -1,13 +1,13 @@
 ## Migration guide
+
 In the carousel v2 in order to make carousel more maintainable, many props have been replaced with the plugins. In the following section, you can find out how to migrate the carousel v1 props into plugins.
 
 ### slidesPerPage
 
-####v1 
+####v1
+
 ```jsx
-<Carousel
-  slidesPerPage={2}
->
+<Carousel slidesPerPage={2}>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -15,58 +15,32 @@ In the carousel v2 in order to make carousel more maintainable, many props have 
 ```
 
 ####v2
+
 ```jsx
-import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import { slidesToShowPlugin } from '@re_point/react-carousel';
 
 <Carousel
   plugins={[
     {
       resolve: slidesToShowPlugin,
       options: {
-       numberOfSlides: 2
-      }
+        numberOfSlides: 2,
+      },
     },
   ]}
 >
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
-</Carousel>
+</Carousel>;
 ```
 
 ### clickToChange
 
-####v1 
-```jsx
-<Carousel
-  clickToChange
->
- <img src={imageOne} />
- <img src={imageTwo} />
- <img src={imageThree} />
-</Carousel>
-```
+####v1
 
-####v2
 ```jsx
-<Carousel
-  plugins={[
-    'clickToChange',
-]}
->
- <img src={imageOne} />
- <img src={imageTwo} />
- <img src={imageThree} />
-</Carousel>
-```
-
-### arrows
-
-####v1 
-```jsx
-<Carousel
-  arrows
->
+<Carousel clickToChange>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -74,10 +48,31 @@ import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 ```
 
 ####v2
+
 ```jsx
-<Carousel
-  plugins={['arrows']}
->
+<Carousel plugins={['clickToChange']}>
+  <img src={imageOne} />
+  <img src={imageTwo} />
+  <img src={imageThree} />
+</Carousel>
+```
+
+### arrows
+
+####v1
+
+```jsx
+<Carousel arrows>
+  <img src={imageOne} />
+  <img src={imageTwo} />
+  <img src={imageThree} />
+</Carousel>
+```
+
+####v2
+
+```jsx
+<Carousel plugins={['arrows']}>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -86,11 +81,10 @@ import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 
 ### infinite
 
-####v1 
+####v1
+
 ```jsx
-<Carousel
-  infinite
->
+<Carousel infinite>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -98,24 +92,21 @@ import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 ```
 
 ####v2
+
 ```jsx
-<Carousel
-  plugins={[
-    'infinite'
-  ]}
->
+<Carousel plugins={['infinite']}>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
 </Carousel>
 ```
-
 
 ### rtl
 
-####v1 
+####v1
+
 ```jsx
-<Carousel rtl >
+<Carousel rtl>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -123,12 +114,9 @@ import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 ```
 
 ####v2
+
 ```jsx
-<Carousel
-  plugins={[
-    'rtl'
-  ]}
->
+<Carousel plugins={['rtl']}>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -137,9 +125,10 @@ import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 
 ### centered
 
-####v1 
+####v1
+
 ```jsx
-<Carousel centered >
+<Carousel centered>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -147,12 +136,9 @@ import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 ```
 
 ####v2
+
 ```jsx
-<Carousel
-  plugins={[
-    'centered'
-  ]}
->
+<Carousel plugins={['centered']}>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -161,11 +147,10 @@ import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 
 ### slidesPerScroll
 
-####v1 
+####v1
+
 ```jsx
-<Carousel
-  slidesPerScroll={2}
->
+<Carousel slidesPerScroll={2}>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -173,32 +158,32 @@ import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 ```
 
 ####v2
+
 ```jsx
-import { slidesToScrollPlugin } from '@brainhubeu/react-carousel';
+import { slidesToScrollPlugin } from '@re_point/react-carousel';
 
 <Carousel
   plugins={[
     {
       resolve: slidesToScrollPlugin,
       options: {
-       numberOfSlides: 2,
+        numberOfSlides: 2,
       },
     },
-  ]}   
+  ]}
 >
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
-</Carousel>
+</Carousel>;
 ```
 
 ### keepDirectionWhenDragging
 
-####v1 
+####v1
+
 ```jsx
-<Carousel
-  keepDirectionWhenDragging
->
+<Carousel keepDirectionWhenDragging>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -206,12 +191,9 @@ import { slidesToScrollPlugin } from '@brainhubeu/react-carousel';
 ```
 
 ####v2
+
 ```jsx
-<Carousel
-  plugins={[
-    'fastSwipe',
-  ]}
->
+<Carousel plugins={['fastSwipe']}>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -220,12 +202,10 @@ import { slidesToScrollPlugin } from '@brainhubeu/react-carousel';
 
 ### autoplay
 
-####v1 
+####v1
+
 ```jsx
-<Carousel
-  autoPlay={2000}
-  animationSpeed={1000}
->
+<Carousel autoPlay={2000} animationSpeed={1000}>
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
@@ -233,24 +213,25 @@ import { slidesToScrollPlugin } from '@brainhubeu/react-carousel';
 ```
 
 ####v2
+
 ```jsx
-import { autoplayPlugin } from '@brainhubeu/react-carousel';
+import { autoplayPlugin } from '@re_point/react-carousel';
 
 <Carousel
-    plugins={[
+  plugins={[
     {
       resolve: autoplayPlugin,
       options: {
         interval: 2000,
-      }
+      },
     },
-  ]}   
+  ]}
   animationSpeed={1000}
 >
   <img src={imageOne} />
   <img src={imageTwo} />
   <img src={imageThree} />
-</Carousel>
+</Carousel>;
 ```
 
 ### dots

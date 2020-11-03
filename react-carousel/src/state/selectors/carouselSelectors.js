@@ -16,7 +16,7 @@ import {
 } from '../atoms/slideAtoms';
 
 export const getCurrentValueSelector = selector({
-  key: '@brainhubeu/react-carousel/getCurrentSlideSelector',
+  key: '@re_point/react-carousel/getCurrentSlideSelector',
   get: ({ get }) => {
     const value = get(carouselValueState);
 
@@ -63,7 +63,7 @@ export const getCurrentValueSelector = selector({
  * @return {number} offset in px
  */
 export const transformOffsetSelector = selector({
-  key: '@brainhubeu/react-carousel/transformOffsetSelector',
+  key: '@re_point/react-carousel/transformOffsetSelector',
   get: ({ get }) => {
     const slideWidth = get(slideWidthState);
     const slideOffset = get(slideOffsetState);
@@ -98,7 +98,7 @@ export const transformOffsetSelector = selector({
  * @return {number} index
  */
 export const nearestSlideSelector = selector({
-  key: '@brainhubeu/react-carousel/nearestSlideSelector',
+  key: '@re_point/react-carousel/nearestSlideSelector',
   get: ({ get }) => {
     const slideWidth = get(slideWidthState);
     const dragOffset = get(slideMovementState).dragOffset;

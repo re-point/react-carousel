@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 
 export const slideMovementState = atom({
-  key: '@brainhubeu/react-carousel/slideMovementState',
+  key: '@re_point/react-carousel/slideMovementState',
   default: {
     clicked: null, // index of the clicked slide
     dragStart: null, // X position of drag event start
@@ -11,17 +11,17 @@ export const slideMovementState = atom({
 });
 
 export const transitionEnabledState = atom({
-  key: '@brainhubeu/react-carousel/transitionEnabledState',
+  key: '@re_point/react-carousel/transitionEnabledState',
   default: false,
 });
 
 export const trackWidthState = atom({
-  key: '@brainhubeu/react-carousel/trackWidthState',
+  key: '@re_point/react-carousel/trackWidthState',
   default: 0,
 });
 
 export const trackStylesState = atom({
-  key: '@brainhubeu/react-carousel/trackStylesState',
+  key: '@re_point/react-carousel/trackStylesState',
   default: {
     marginLeft: 0,
     transform: 0,
@@ -29,11 +29,11 @@ export const trackStylesState = atom({
 });
 
 export const carouselStrategiesState = atom({
-  key: '@brainhubeu/react-carousel/carouselStrategiesState',
+  key: '@re_point/react-carousel/carouselStrategiesState',
   default: [],
 });
 
 export const carouselValueState = atom({
-  key: '@brainhubeu/react-carousel/carouselValueState',
+  key: '@re_point/react-carousel/carouselValueState',
   default: 0,
 });

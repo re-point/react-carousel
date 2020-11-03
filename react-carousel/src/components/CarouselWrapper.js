@@ -45,20 +45,18 @@ const CarouselWrapper = (props) => {
 
   const isControlled = !_isNil(customValue);
 
-  if (typeof window !== `undefined`) {
-    return (
-      <Carousel
-        key={carouselProps?.plugins?.length || 0}
-        transformOffset={transformOffset}
-        nearestSlideIndex={nearestSlideIndex}
-        value={value}
-        onChange={isControlled ? onChange : changeSlide}
-        {...carouselProps}
-      />
-    );
-  } else {
-    return null;
-  }
+  return typeof window !== `undefined` ? (
+    <Carousel
+      key={carouselProps?.plugins?.length || 0}
+      transformOffset={transformOffset}
+      nearestSlideIndex={nearestSlideIndex}
+      value={value}
+      onChange={isControlled ? onChange : changeSlide}
+      {...carouselProps}
+    />
+  ) : (
+    <></>
+  );
 };
 
 CarouselWrapper.propTypes = {

@@ -45,7 +45,7 @@ const CarouselWrapper = (props) => {
 
   const isControlled = !_isNil(customValue);
 
-  return typeof window !== `undefined` ? (
+  return (
     <Carousel
       key={carouselProps?.plugins?.length || 0}
       transformOffset={transformOffset}
@@ -54,8 +54,6 @@ const CarouselWrapper = (props) => {
       onChange={isControlled ? onChange : changeSlide}
       {...carouselProps}
     />
-  ) : (
-    <></>
   );
 };
 

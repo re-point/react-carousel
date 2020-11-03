@@ -31,32 +31,34 @@ const CarouselWrapper = (props) => {
   const transformOffset = useRecoilValue(transformOffsetSelector);
   const nearestSlideIndex = useRecoilValue(nearestSlideSelector);
 
-  const carouselProps =
-    typeof window !== `undefined`
-      ? Object.entries(rest.breakpoints || {})
-          .filter(([resolution]) => window.innerWidth <= resolution)
-          .sort(([prevRes], [nextRes]) => nextRes - prevRes)
-          .reduce(
-            // eslint-disable-next-line no-unused-vars
-            (prev, [_, props]) => ({
-              ...prev,
-              ...props,
-            }),
-            _omit(rest, ['breakpoints']),
-          )
-      : null;
+  const carouselProps = Object.entries(rest.breakpoints || {})
+    .filter(([resolution]) => window.innerWidth <= resolution)
+    .sort(([prevRes], [nextRes]) => nextRes - prevRes)
+    .reduce(
+      // eslint-disable-next-line no-unused-vars
+      (prev, [_, props]) => ({
+        ...prev,
+        ...props,
+      }),
+      _omit(rest, ['breakpoints']),
+    );
 
   const isControlled = !_isNil(customValue);
-  return (
-    <Carousel
-      key={carouselProps?.plugins?.length || 0}
-      transformOffset={transformOffset}
-      nearestSlideIndex={nearestSlideIndex}
-      value={value}
-      onChange={isControlled ? onChange : changeSlide}
-      {...carouselProps}
-    />
-  );
+
+  if (typeof window !== `undefined`) {
+    return (
+      <Carousel
+        key={carouselProps?.plugins?.length || 0}
+        transformOffset={transformOffset}
+        nearestSlideIndex={nearestSlideIndex}
+        value={value}
+        onChange={isControlled ? onChange : changeSlide}
+        {...carouselProps}
+      />
+    );
+  } else {
+    return null;
+  }
 };
 
 CarouselWrapper.propTypes = {
